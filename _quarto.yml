@@ -9,6 +9,7 @@ format:
 
   # ---- HTML: the full interactive lesson --------------------------------
   html:
+    output-file: index.html
     theme: theme/lesson.scss
     toc: true
     toc-location: left
