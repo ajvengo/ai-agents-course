@@ -6,7 +6,6 @@ lang: ru
 
 # Rendered to both formats by `quarto render`.
 format:
-
   # ---- HTML: the full interactive lesson --------------------------------
   html:
     output-file: index.html
@@ -37,10 +36,10 @@ format:
     toc-depth: 2
     number-sections: false
     colorlinks: true
-    fontsize: 11pt
+    fontsize: 10pt
     mainfont: "PT Serif"
     sansfont: "PT Sans"
-    monofont: "Latin Modern Mono"
+    monofont: "PT Mono"
     include-in-header:
       text: |
         \newfontfamily{\glyphfallback}{TeX Gyre Termes}
