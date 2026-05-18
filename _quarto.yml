@@ -1,0 +1,49 @@
+project:
+  type: default
+  output-dir: _site
+
+lang: ru
+
+# Rendered to both formats by `quarto render`.
+format:
+
+  # ---- HTML: the full interactive lesson --------------------------------
+  html:
+    theme: theme/lesson.scss
+    toc: true
+    toc-location: left
+    toc-title: "Разделы"
+    toc-depth: 2
+    number-sections: false
+    anchor-sections: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: arrow
+    page-layout: article
+    include-after-body: assets/lesson-foot.html
+    link-external-newwindow: true
+
+  # ---- PDF: a typeset print / archive version --------------------------
+  # Interactive chrome (tabs, quiz scoring) flattens to static content;
+  # diagrams switch from inline SVG to rasterised PNG automatically.
+  pdf:
+    documentclass: scrartcl
+    pdf-engine: lualatex
+    papersize: a4
+    geometry:
+      - margin=22mm
+    toc: true
+    toc-depth: 2
+    number-sections: false
+    colorlinks: true
+    fontsize: 11pt
+    mainfont: "PT Serif"
+    sansfont: "PT Sans"
+    monofont: "Latin Modern Mono"
+    include-in-header:
+      text: |
+        \newfontfamily{\glyphfallback}{TeX Gyre Termes}
+        \catcode`→=\active
+        \protected\def→{{\glyphfallback\symbol{"2192}}}
+        \catcode`↔=\active
+        \protected\def↔{{\glyphfallback\symbol{"2194}}}

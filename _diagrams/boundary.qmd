@@ -1,0 +1,32 @@
+::: {.content-visible unless-format="pdf"}
+
+```{=html}
+<figure class="visual-card compact" aria-labelledby="boundary-title">
+<span class="visual-kicker" id="boundary-title">Иллюстрация · граница возможностей</span>
+<svg viewBox="0 0 720 226" role="img" aria-label="LLM хорошо преобразует данные внутри контекста, но для внешнего мира нужны инструменты">
+      <rect class="svg-box green" x="20" y="26" width="304" height="158" rx="18" />
+      <text class="svg-label" x="172" y="62" text-anchor="middle">Внутри контекста</text>
+      <text class="svg-small" x="172" y="92" text-anchor="middle">перевод · рерайт · объяснение кода</text>
+      <text class="svg-small" x="172" y="113" text-anchor="middle">извлечение и классификация полей</text>
+      <rect x="70" y="138" width="204" height="30" rx="15" fill="var(--surface)" stroke="rgba(45,94,62,0.35)" stroke-width="1.2" />
+      <text class="svg-mono" x="172" y="157" text-anchor="middle" style="fill:var(--green)">текст → текст</text>
+
+      <line x1="360" y1="16" x2="360" y2="196" stroke="var(--rule)" stroke-width="2" stroke-dasharray="7 8" />
+      <rect x="318" y="92" width="84" height="26" rx="13" fill="var(--surface)" stroke="var(--rule)" stroke-width="1" />
+      <text class="svg-mono" x="360" y="109" text-anchor="middle">граница</text>
+
+      <rect class="svg-box accent" x="396" y="26" width="304" height="158" rx="18" />
+      <text class="svg-label" x="548" y="62" text-anchor="middle">Внешний мир</text>
+      <text class="svg-small" x="548" y="92" text-anchor="middle">интернет · базы · файлы · часы</text>
+      <text class="svg-small" x="548" y="113" text-anchor="middle">актуальные статусы и действия</text>
+      <rect x="446" y="138" width="204" height="30" rx="15" fill="var(--surface)" stroke="rgba(184,67,26,0.35)" stroke-width="1.2" />
+      <text class="svg-mono" x="548" y="157" text-anchor="middle" style="fill:var(--accent)">нужны tools / код</text>
+    </svg>
+</figure>
+```
+
+:::
+
+::: {.content-visible when-format="pdf"}
+![Иллюстрация · граница возможностей](_diagrams/boundary.svg){width=100%}
+:::

@@ -1,0 +1,61 @@
+::: {.content-visible unless-format="pdf"}
+
+```{=html}
+<figure class="visual-card compact" aria-labelledby="decision-flow-title">
+<span class="visual-kicker" id="decision-flow-title">Мини-схема · как выбрать подход</span>
+<svg viewBox="0 0 720 250" role="img" aria-label="Если данные уже в контексте — достаточно LLM; нужен внешний источник — инструменты; порядок шагов неизвестен — агент; точный подсчёт по большим данным — обычный скрипт">
+      <defs>
+        <marker id="flow-green" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--green)" />
+        </marker>
+        <marker id="flow-yellow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#b8881a" />
+        </marker>
+        <marker id="flow-accent" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+        </marker>
+        <marker id="flow-mute" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--ink-mute)" />
+        </marker>
+      </defs>
+
+      <rect class="svg-box surface" x="270" y="20" width="180" height="58" rx="14" />
+      <text class="svg-label" x="360" y="46" text-anchor="middle">Какая задача?</text>
+      <text class="svg-small" x="360" y="65" text-anchor="middle">определите границу</text>
+
+      <path class="svg-arrow mute" d="M 360 78 V 104" />
+      <circle cx="360" cy="104" r="3.5" fill="var(--ink-mute)" />
+
+      <path class="svg-arrow" d="M 360 104 C 268 116 168 114 100 126" style="stroke:var(--green)" marker-end="url(#flow-green)" />
+      <path class="svg-arrow" d="M 360 104 C 330 116 300 114 274 126" style="stroke:#b8881a" marker-end="url(#flow-yellow)" />
+      <path class="svg-arrow" d="M 360 104 C 390 116 420 114 446 126" style="stroke:var(--accent)" marker-end="url(#flow-accent)" />
+      <path class="svg-arrow" d="M 360 104 C 452 116 552 114 620 126" style="stroke:var(--ink-mute)" marker-end="url(#flow-mute)" />
+
+      <rect class="svg-box green" x="24" y="128" width="152" height="98" rx="14" />
+      <text class="svg-label" x="100" y="164" text-anchor="middle">LLM</text>
+      <text class="svg-small" x="100" y="188" text-anchor="middle">данные уже</text>
+      <text class="svg-small" x="100" y="207" text-anchor="middle">в контексте</text>
+
+      <rect class="svg-box yellow" x="198" y="128" width="152" height="98" rx="14" />
+      <text class="svg-label" x="274" y="164" text-anchor="middle">+ tools</text>
+      <text class="svg-small" x="274" y="188" text-anchor="middle">1–2 внешних</text>
+      <text class="svg-small" x="274" y="207" text-anchor="middle">вызова</text>
+
+      <rect class="svg-box accent" x="372" y="128" width="152" height="98" rx="14" />
+      <text class="svg-label" x="448" y="164" text-anchor="middle">агент</text>
+      <text class="svg-small" x="448" y="188" text-anchor="middle">порядок шагов</text>
+      <text class="svg-small" x="448" y="207" text-anchor="middle">неизвестен</text>
+
+      <rect class="svg-box surface" x="546" y="128" width="152" height="98" rx="14" />
+      <text class="svg-label" x="622" y="164" text-anchor="middle">скрипт</text>
+      <text class="svg-small" x="622" y="188" text-anchor="middle">точный подсчёт</text>
+      <text class="svg-small" x="622" y="207" text-anchor="middle">по большим данным</text>
+    </svg>
+</figure>
+```
+
+:::
+
+::: {.content-visible when-format="pdf"}
+![Мини-схема · как выбрать подход](_diagrams/decision.svg){width=100%}
+:::

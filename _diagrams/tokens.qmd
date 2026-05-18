@@ -1,0 +1,52 @@
+::: {.content-visible unless-format="pdf"}
+
+```{=html}
+<figure class="visual-card compact" aria-labelledby="tokens-title">
+<span class="visual-kicker" id="tokens-title">Как модель видит текст · токены</span>
+<svg viewBox="0 0 720 206" role="img" aria-label="Текст разбивается на токены с числовыми id, а контекстное окно — это бюджет, измеряемый в токенах">
+      <defs>
+        <marker id="arrow-tok" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--ink-mute)" />
+        </marker>
+      </defs>
+
+      <text class="svg-mono" x="30" y="22" text-anchor="start">слово → несколько токенов</text>
+
+      <rect class="svg-box surface" x="30" y="36" width="170" height="50" rx="12" />
+      <text class="svg-label" x="115" y="67" text-anchor="middle">контекстное окно</text>
+
+      <path class="svg-arrow mute" d="M 206 61 H 258" marker-end="url(#arrow-tok)" />
+
+      <rect class="svg-box accent" x="270" y="36" width="88" height="50" rx="10" />
+      <text class="svg-small" x="314" y="59" text-anchor="middle">кон</text>
+      <text class="svg-mono" x="314" y="76" text-anchor="middle">#8021</text>
+
+      <rect class="svg-box accent" x="370" y="36" width="88" height="50" rx="10" />
+      <text class="svg-small" x="414" y="59" text-anchor="middle">текст</text>
+      <text class="svg-mono" x="414" y="76" text-anchor="middle">#4412</text>
+
+      <rect class="svg-box accent" x="470" y="36" width="88" height="50" rx="10" />
+      <text class="svg-small" x="514" y="59" text-anchor="middle">ное</text>
+      <text class="svg-mono" x="514" y="76" text-anchor="middle">#990</text>
+
+      <rect class="svg-box accent" x="570" y="36" width="88" height="50" rx="10" />
+      <text class="svg-small" x="614" y="59" text-anchor="middle">окно</text>
+      <text class="svg-mono" x="614" y="76" text-anchor="middle">#3567</text>
+
+      <text class="svg-mono" x="30" y="118" text-anchor="start">контекстное окно — это бюджет в токенах</text>
+
+      <rect x="30" y="130" width="628" height="34" rx="17" fill="var(--bg-soft)" stroke="var(--rule)" stroke-width="1.4" />
+      <rect x="30" y="130" width="404" height="34" rx="17" fill="var(--green-soft)" stroke="rgba(45,94,62,0.35)" stroke-width="1.4" />
+      <text class="svg-mono" x="232" y="151" text-anchor="middle" style="fill:var(--green)">промпт + история + код</text>
+      <text class="svg-mono" x="548" y="151" text-anchor="middle">свободно для ответа</text>
+
+      <text class="svg-mono" x="360" y="190" text-anchor="middle">что не влезло в бюджет — модель просто не увидит</text>
+    </svg>
+</figure>
+```
+
+:::
+
+::: {.content-visible when-format="pdf"}
+![Как модель видит текст · токены](_diagrams/tokens.svg){width=100%}
+:::
