@@ -18,6 +18,17 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
+      - name: Cache Quarto + TinyTeX
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.local/share/quarto
+            ~/.TinyTeX
+          # Bump the v1 suffix to force-invalidate the cache.
+          key: ${{ runner.os }}-quarto-tinytex-v1-${{ hashFiles('_quarto.yml', 'llm-i-agenty.qmd') }}
+          restore-keys: |
+            ${{ runner.os }}-quarto-tinytex-v1-
+
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
