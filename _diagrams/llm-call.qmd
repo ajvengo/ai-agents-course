@@ -1,0 +1,50 @@
+::: {.content-visible unless-format="pdf"}
+
+```{=html}
+<figure class="visual-card" aria-labelledby="llm-pipeline-title">
+<span class="visual-kicker" id="llm-pipeline-title">Схема · один вызов LLM</span>
+<svg viewBox="0 0 720 264" role="img" aria-label="Запрос с контекстом отправляется в LLM, модель возвращает текст, а состояние между вызовами не сохраняется">
+      <defs>
+        <marker id="arrow-accent" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--accent)" />
+        </marker>
+        <marker id="arrow-mute" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--ink-mute)" />
+        </marker>
+      </defs>
+
+      <rect class="svg-box surface" x="24" y="58" width="180" height="128" rx="14" />
+      <text class="svg-label" x="114" y="94" text-anchor="middle">messages[]</text>
+      <text class="svg-small" x="114" y="122" text-anchor="middle">system prompt</text>
+      <text class="svg-small" x="114" y="143" text-anchor="middle">история диалога</text>
+      <text class="svg-mono" x="114" y="168" text-anchor="middle">контекстное окно</text>
+
+      <path class="svg-arrow" d="M 210 122 H 282" marker-end="url(#arrow-accent)" />
+
+      <rect class="svg-box accent" x="288" y="46" width="160" height="152" rx="22" />
+      <circle class="svg-dot" cx="338" cy="84" r="6" />
+      <circle class="svg-dot yellow" cx="368" cy="84" r="6" />
+      <circle class="svg-dot green" cx="398" cy="84" r="6" />
+      <text class="svg-label" x="368" y="128" text-anchor="middle">LLM</text>
+      <text class="svg-small" x="368" y="152" text-anchor="middle">предсказывает</text>
+      <text class="svg-small" x="368" y="171" text-anchor="middle">следующий токен</text>
+
+      <path class="svg-arrow" d="M 454 122 H 526" marker-end="url(#arrow-accent)" />
+
+      <rect class="svg-box green" x="532" y="58" width="164" height="128" rx="14" />
+      <text class="svg-label" x="614" y="100" text-anchor="middle">ответ</text>
+      <text class="svg-small" x="614" y="130" text-anchor="middle">текст / JSON</text>
+      <text class="svg-mono" x="614" y="156" text-anchor="middle">вероятностно</text>
+
+      <path class="svg-arrow mute" d="M 614 190 C 558 248 196 248 114 192" stroke-dasharray="5 7" marker-end="url(#arrow-mute)" />
+      <rect x="218" y="222" width="284" height="28" rx="14" fill="var(--surface)" stroke="var(--rule)" stroke-width="1" />
+      <text class="svg-mono" x="360" y="240" text-anchor="middle">между вызовами память не сохраняется</text>
+    </svg>
+</figure>
+```
+
+:::
+
+::: {.content-visible when-format="pdf"}
+![Схема · один вызов LLM](_diagrams/llm-call.svg){width=100%}
+:::

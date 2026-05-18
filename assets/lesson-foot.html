@@ -1,0 +1,74 @@
+<script>
+/* Lesson interactivity — staged code tabs + self-check quiz.
+   Progressive enhancement: the page is fully readable without it. */
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ---- staged code tabs --------------------------------------------- */
+  function letterOf(el, i) {
+    var m = el.querySelector('.marker');
+    return (m ? m.textContent : String.fromCharCode(65 + i)).trim().toUpperCase();
+  }
+
+  document.querySelectorAll('.stage-tab').forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      var scope = tab.closest('section') || document;
+      var stage = tab.getAttribute('data-stage');
+      scope.querySelectorAll('.stage-tab').forEach(function (t) {
+        t.classList.toggle('active', t === tab);
+      });
+      scope.querySelectorAll('.stage-content').forEach(function (c) {
+        c.classList.toggle('active', c.getAttribute('data-stage') === stage);
+      });
+    });
+  });
+
+  /* ---- quiz ---------------------------------------------------------- */
+  var score = 0;
+  var scoreEl = document.getElementById('score');
+
+  document.querySelectorAll('.quiz[data-correct]').forEach(function (quiz) {
+    var correct  = (quiz.getAttribute('data-correct') || '').trim().toUpperCase();
+    var options  = Array.prototype.slice.call(quiz.querySelectorAll('.quiz-options > p'));
+    var feedback = quiz.querySelector('.quiz-feedback');
+    var reveal   = quiz.querySelector('.quiz-reveal');
+    var answered = false;
+
+    /* a toggle for the detailed breakdown, hidden until the user answers */
+    var btn = null;
+    if (reveal) {
+      btn = document.createElement('button');
+      btn.className = 'quiz-reveal-btn';
+      btn.textContent = 'Развёрнутый разбор';
+      btn.style.display = 'none';
+      reveal.parentNode.insertBefore(btn, reveal);
+      btn.addEventListener('click', function () {
+        btn.classList.toggle('open', reveal.classList.toggle('show'));
+      });
+    }
+
+    options.forEach(function (opt, i) {
+      opt.addEventListener('click', function () {
+        if (answered) return;
+        answered = true;
+
+        options.forEach(function (o, j) {
+          o.classList.add('locked');
+          if (letterOf(o, j) === correct)      o.classList.add('correct');
+          else if (o === opt)                  o.classList.add('wrong');
+        });
+
+        var ok = letterOf(opt, i) === correct;
+        if (ok && scoreEl) scoreEl.textContent = (++score);
+
+        if (feedback) {
+          feedback.textContent = ok
+            ? 'Верно. Откройте разбор, чтобы свериться с рассуждением.'
+            : 'Не совсем — правильный ответ подсвечен. Откройте разбор ниже.';
+          feedback.className = 'quiz-feedback show ' + (ok ? 'ok' : 'no');
+        }
+        if (btn) btn.style.display = 'block';
+      });
+    });
+  });
+});
+</script>
