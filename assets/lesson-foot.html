@@ -3,6 +3,38 @@
    Progressive enhancement: the page is fully readable without it. */
 document.addEventListener('DOMContentLoaded', function () {
 
+  /* TOC scrollspy on `window` — Quarto's bundled scrollspy listens on
+     `document`, which doesn't catch window-level scroll in this layout. */
+  (function () {
+    var links = Array.prototype.slice.call(
+      document.querySelectorAll('#TOC a.nav-link[data-scroll-target]'));
+    if (!links.length) return;
+    var sections = links.map(function (l) {
+      var id = (l.getAttribute('data-scroll-target') || '').replace(/^#/, '');
+      return document.getElementById(id);
+    });
+
+    var MARGIN = 200;
+    function update() {
+      var idx = -1;
+      for (var i = sections.length - 1; i >= 0; i--) {
+        if (sections[i] && sections[i].getBoundingClientRect().top <= MARGIN) {
+          idx = i;
+          break;
+        }
+      }
+      var target = idx === -1 ? null : links[idx];
+      links.forEach(function (l) { l.classList.toggle('active', l === target); });
+    }
+    var queued = false;
+    window.addEventListener('scroll', function () {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function () { queued = false; update(); });
+    }, { passive: true });
+    update();
+  })();
+
   /* ---- staged code tabs --------------------------------------------- */
   function letterOf(el, i) {
     var m = el.querySelector('.marker');
